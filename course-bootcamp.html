@@ -377,6 +377,15 @@ ul.plain li::before{content:'';position:absolute;left:0;top:19px;width:9px;heigh
   .close p{font-size:19px}
   .guide{margin-top:112px}
 }
+
+/* HERO-TO-BODY RULE. Lacey, 18 Sep 2026, option B: the brand teal under a dark
+   hero, deep teal #148F8A under a mint one. Same element as the vertical teal bar
+   beside the 5 Exercises band, so same colour token and same thickness: 8px on
+   phone, calc(var(--u) * 14) from 1100 up. It bleeds the full width the way the
+   hero's own background does. This one is the mint hero. */
+.op{position:relative}
+.op::after{content:'';position:absolute;left:calc(-1 * var(--bleed));right:calc(-1 * var(--bleed));bottom:0;height:8px;background:#148F8A;z-index:2}
+@media (min-width:1100px){.op::after{height:calc(var(--u) * 14)}}
 </style>
 </head>
 <body>
