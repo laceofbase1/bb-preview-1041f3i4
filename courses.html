@@ -275,10 +275,22 @@ select{appearance:none;-webkit-appearance:none}
 <style>
 /* ===== CATALOGUE: flow layout inside the shared 1440 wrap ===== */
 .cw{max-width:1440px;margin:0 auto;padding:0 24px}
-.co{background:rgba(140,226,200,.18);padding:44px 0 48px}
-.co h1{font-size:clamp(32px,8.6vw,44px);line-height:1.1;color:var(--deep)}
-.co .lede{font-size:18px;line-height:1.55;color:var(--ink);margin-top:14px;max-width:32em}
+/* THE DARK OPENER. Lacey, 18 Sep 2026: "I do like the black header on the
+   website and think I want that for the About page and On-Demand Courses. I feel
+   like it really anchors this." Same treatment and same tokens as the Speaking
+   hero (.sh in build_speaking.py, which stays the source of truth): ink ground,
+   white Poppins headline, teal full stops via <i>, lede at 82% white, teal
+   primary button and a white-outlined secondary.
+   Only the colour tokens changed. The structure, sizes and spacing are the ones
+   this page already had, so nothing else on the page moves.
+   NOTE: this is now the third copy of these tokens. Consolidate into the shared
+   template when it is not launch day. */
+.co{background:var(--ink);padding:44px 0 48px}
+.co h1{font-size:clamp(32px,8.6vw,44px);line-height:1.1;color:var(--white)}
+.co h1 i{font-style:normal;color:var(--teal)}
+.co .lede{font-size:18px;line-height:1.55;color:rgba(255,255,255,.82);margin-top:14px;max-width:32em}
 .co .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.co .btn-o{border-color:rgba(255,255,255,.7);color:var(--white)}
 .meta{font-family:Poppins,sans-serif;font-weight:500;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--deep)}
 .aud,.pre,.start .why{font-family:Nunito,sans-serif;font-weight:400;font-size:15px;line-height:1.5;color:var(--grey);margin-top:8px}
 .price{font-family:Poppins,sans-serif;font-weight:600;font-size:18px;margin-top:14px}

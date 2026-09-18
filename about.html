@@ -274,10 +274,21 @@ select{appearance:none;-webkit-appearance:none}
 
 <style>
 /* ===== ABOUT: mobile first ===== */
-.ah{padding:44px 24px 48px;background:rgba(140,226,200,.18)}
-.ah h1{font-size:clamp(32px,8.6vw,44px);line-height:1.1;color:var(--deep)}
-.ah .role{font-family:Poppins,sans-serif;font-weight:500;font-size:16px;margin-top:10px}
-.ah .lede{font-size:18px;line-height:1.55;color:var(--grey);margin-top:14px;max-width:26em}
+/* THE DARK OPENER. Lacey, 18 Sep 2026: "I do like the black header on the
+   website and think I want that for the About page and On-Demand Courses. I feel
+   like it really anchors this." Same treatment and same tokens as the Speaking
+   hero (.sh in build_speaking.py, which stays the source of truth): ink ground,
+   white Poppins headline, teal full stops via <i>, lede at 82% white, teal
+   primary button and a white-outlined secondary.
+   Only the colour tokens changed. The structure, sizes and spacing are the ones
+   this page already had, so nothing else on the page moves.
+   NOTE: this is now the third copy of these tokens. Consolidate into the shared
+   template when it is not launch day. */
+.ah{padding:44px 24px 48px;background:var(--ink)}
+.ah h1{font-size:clamp(32px,8.6vw,44px);line-height:1.1;color:var(--white)}
+.ah h1 i{font-style:normal;color:var(--teal)}
+.ah .role{font-family:Poppins,sans-serif;font-weight:500;font-size:16px;margin-top:10px;color:var(--white)}
+.ah .lede{font-size:18px;line-height:1.55;color:rgba(255,255,255,.82);margin-top:14px;max-width:26em}
 .trip{margin-top:36px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .trip .ph{aspect-ratio:1;position:relative;overflow:hidden}
 .trip .ph:nth-child(2){margin-top:28px}
@@ -315,7 +326,7 @@ select{appearance:none;-webkit-appearance:none}
 /* ===== ABOUT: desktop, 1440 canvas scaled by --u ===== */
 @media (min-width:1100px){
   .ah{height:calc(var(--u) * 440);padding:0;background:none}
-  .ah::before{content:'';position:absolute;left:calc(-1 * var(--bleed));right:calc(-1 * var(--bleed));top:0;bottom:0;background:rgba(140,226,200,.18)}
+  .ah::before{content:'';position:absolute;left:calc(-1 * var(--bleed));right:calc(-1 * var(--bleed));top:0;bottom:0;background:var(--ink)}
   .ah .txt{position:absolute;left:calc(var(--u) * 72);top:calc(var(--u) * 112);width:calc(var(--u) * 760)}
   .ah h1{font-size:calc(var(--u) * 54);letter-spacing:-.015em}
   .ah .role{font-size:calc(var(--u) * 17)}
